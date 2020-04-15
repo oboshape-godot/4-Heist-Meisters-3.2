@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/message.wav-4b96b99d4aa7dff30878c3e5d7dcb23e.sample"
+
+[deps]
+
+source_file="res://Imported Assets/SFX/message.wav"
+dest_files=[ "res://.import/message.wav-4b96b99d4aa7dff30878c3e5d7dcb23e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
