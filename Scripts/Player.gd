@@ -1,16 +1,14 @@
-extends "res://Scripts/TemplateCharacter.gd"
+extends TemplateCharacter
 
 var motion = Vector2() # motion velocity of player
 var moveInputDir = Vector2() # used to record direction inputs
 
-
 func _process(_delta):
 	update_motion(_delta)
-	
+
 
 func _physics_process(_delta):
-	move_and_slide(motion)
-	
+	var _remainder = move_and_slide(motion)
 	
 func update_motion(_delta):
 	# point towards the mouse cursor
@@ -32,11 +30,7 @@ func update_motion(_delta):
 		motion += SPEED * moveInputDir.normalized()
 	else:
 		if motion != Vector2.ZERO:
+			#although not the perfect use of lerp its a slowdown
 			motion = lerp(motion, Vector2.ZERO, 0.1)
 	
 	motion = motion.clamped(MAX_SPEED)
-
-
-func _input(_event):
-	if Input.is_action_just_pressed("torch_toggle"):
-		$Torch.enabled = !$Torch.enabled
