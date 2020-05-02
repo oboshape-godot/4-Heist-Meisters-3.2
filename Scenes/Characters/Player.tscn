@@ -5,7 +5,7 @@
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=3]
 
 [node name="Player" instance=ExtResource( 1 )]
-collision_mask = 2
+collision_mask = 6
 script = ExtResource( 3 )
 
 [node name="Sprite" parent="." index="0"]
@@ -16,5 +16,4 @@ show_behind_parent = true
 use_parent_material = true
 
 [node name="Light2D" type="Light2D" parent="." index="3"]
-visible = false
 texture = ExtResource( 2 )
