@@ -9,12 +9,18 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "TemplateCharacter",
+"class": "PlayerDetection",
+"language": "GDScript",
+"path": "res://Scripts/PlayerDetection.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "TemplateCharacter",
 "language": "GDScript",
 "path": "res://Scripts/TemplateCharacter.gd"
 } ]
 _global_script_class_icons={
+"PlayerDetection": "",
 "TemplateCharacter": ""
 }
 

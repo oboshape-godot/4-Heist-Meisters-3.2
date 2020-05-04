@@ -1,4 +1,5 @@
 extends TemplateCharacter
+class_name PlayerDetection
 
 const FOV_TOLERANCE = 20
 const MAX_DETECTION_DISTANCE = 350
