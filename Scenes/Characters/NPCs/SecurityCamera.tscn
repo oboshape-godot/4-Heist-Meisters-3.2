@@ -50,11 +50,9 @@ visible = false
 shape = SubResource( 1 )
 disabled = true
 
-[node name="Torch" parent="CameraBody" instance=ExtResource( 3 )]
-position = Vector2( 0, 0 )
-scale = Vector2( 0.5, 0.5 )
-offset = Vector2( 375, 0 )
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CameraBody"]
 autoplay = "SecurityCameraScan"
 anims/SecurityCameraScan = SubResource( 2 )
+
+[node name="Torch" parent="CameraBody" instance=ExtResource( 3 )]
+position = Vector2( 28.0881, 0 )

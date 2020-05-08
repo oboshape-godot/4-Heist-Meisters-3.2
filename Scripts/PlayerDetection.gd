@@ -2,7 +2,7 @@ extends TemplateCharacter
 class_name PlayerDetection
 
 const FOV_TOLERANCE = 20
-const MAX_DETECTION_DISTANCE = 350
+const MAX_DETECTION_DISTANCE = 340
 const RED = Color (1, 0.25, 0.25)
 const WHITE = Color (1, 1, 1)
 
