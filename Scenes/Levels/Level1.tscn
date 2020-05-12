@@ -56,6 +56,9 @@ position = Vector2( 1604.83, 435.001 )
 [node name="Destination15" type="Position2D" parent="Navigation2D/Destinations" index="14"]
 position = Vector2( 1610.7, 1069.25 )
 
+[node name="Camera2D" parent="Player" index="4"]
+zoom = Vector2( 3, 3 )
+
 [node name="SecurityCamera" parent="Cameras" index="0" instance=ExtResource( 2 )]
 position = Vector2( 609.355, 697.631 )
 rotation = -1.5708
