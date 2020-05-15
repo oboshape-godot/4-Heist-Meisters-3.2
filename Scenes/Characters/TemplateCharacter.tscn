@@ -4,7 +4,8 @@
 [ext_resource path="res://Scripts/TemplateCharacter.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape2D" id=1]
-height = 24.828
+radius = 12.7278
+height = 17.3966
 
 [sub_resource type="OccluderPolygon2D" id=2]
 cull_mode = 2
@@ -20,7 +21,6 @@ __meta__ = {
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
 position = Vector2( -2, 0 )
 shape = SubResource( 1 )
 

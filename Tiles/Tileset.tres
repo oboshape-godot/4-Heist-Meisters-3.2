@@ -298,7 +298,7 @@ vertices = PoolVector2Array( 64, 24, 64, 40, 40, 40, 40, 64, 24, 64, 24, 40, 0, 
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 
 [sub_resource type="NavigationPolygon" id=99]
-vertices = PoolVector2Array( 40, 0, 24, 0, 24, 24, 0, 24, 0, 40, 24, 40, 24, 64, 40, 64, 40, 40, 64, 40, 64, 24, 40, 24 )
+vertices = PoolVector2Array( 40, 0, 40, 24, 64, 24, 64, 40, 40, 40, 40, 64, 24, 64, 24, 40, 0, 40, 0, 24, 24, 24, 24, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 
 [sub_resource type="NavigationPolygon" id=100]
@@ -306,18 +306,19 @@ vertices = PoolVector2Array( 40, 0, 40, 24, 64, 24, 64, 40, 40, 40, 40, 64, 24, 
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 
 [sub_resource type="NavigationPolygon" id=101]
-vertices = PoolVector2Array( 40, 0, 40, 24, 64, 24, 64, 40, 40, 40, 40, 64, 24, 64, 24, 40, 0, 40, 0, 24, 24, 24, 24, 0 )
+vertices = PoolVector2Array( 24, 0, 40, 0, 40, 24, 64, 24, 64, 40, 40, 40, 40, 64, 24, 64, 24, 40, 0, 40, 0, 24, 24, 24 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 
 [sub_resource type="NavigationPolygon" id=102]
-vertices = PoolVector2Array( 40, 64, 24, 64, 24, 40, 0, 40, 0, 24, 24, 24, 24, 0, 40, 0, 40, 24, 64, 24, 64, 40, 40, 40 )
+vertices = PoolVector2Array( 40, 0, 40, 24, 64, 24, 64, 40, 40, 40, 40, 64, 24, 64, 24, 40, 0, 40, 0, 24, 24, 24, 24, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 
 [sub_resource type="NavigationPolygon" id=103]
-vertices = PoolVector2Array( 40, 0, 24, 0, 24, 24, 0, 24, 0, 40, 24, 40, 24, 64, 40, 64, 40, 40, 64, 40, 64, 24, 40, 24 )
+vertices = PoolVector2Array( 40, 0, 40, 24, 64, 24, 64, 40, 40, 40, 40, 64, 24, 64, 24, 40, 0, 40, 0, 24, 24, 24, 24, 0 )
 polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 
 [resource]
+resource_local_to_scene = true
 1/name = "Walls"
 1/texture = ExtResource( 1 )
 1/tex_offset = Vector2( 0, 0 )
@@ -642,20 +643,20 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 "shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
 } ]
 1/z_index = 1
-2/name = "Floor1"
+2/name = "Floor_1"
 2/texture = ExtResource( 1 )
 2/tex_offset = Vector2( 0, 0 )
 2/modulate = Color( 1, 1, 1, 1 )
 2/region = Rect2( 896, 192, 384, 64 )
 2/tile_mode = 1
 2/autotile/bitmask_mode = 1
-2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 325, Vector2( 2, 0 ), 325, Vector2( 4, 0 ), 325 ]
-2/autotile/icon_coordinate = Vector2( 2, 0 )
+2/autotile/bitmask_flags = [ Vector2( 0, 0 ), 511, Vector2( 2, 0 ), 511, Vector2( 4, 0 ), 511 ]
+2/autotile/icon_coordinate = Vector2( 0, 0 )
 2/autotile/tile_size = Vector2( 64, 64 )
 2/autotile/spacing = 0
 2/autotile/occluder_map = [  ]
 2/autotile/navpoly_map = [ Vector2( 0, 0 ), SubResource( 98 ), Vector2( 2, 0 ), SubResource( 99 ), Vector2( 4, 0 ), SubResource( 100 ) ]
-2/autotile/priority_map = [ Vector3( 0, 0, 2 ) ]
+2/autotile/priority_map = [  ]
 2/autotile/z_index_map = [  ]
 2/occluder_offset = Vector2( 0, 0 )
 2/navigation_offset = Vector2( 0, 0 )
@@ -665,7 +666,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 2/shape_one_way_margin = 0.0
 2/shapes = [  ]
 2/z_index = 0
-3/name = "Floors2"
+3/name = "tilesheet_complete.png 3"
 3/texture = ExtResource( 1 )
 3/tex_offset = Vector2( 0, 0 )
 3/modulate = Color( 1, 1, 1, 1 )
@@ -678,7 +679,7 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11 ) ]
 3/autotile/spacing = 0
 3/autotile/occluder_map = [  ]
 3/autotile/navpoly_map = [ Vector2( 1, 0 ), SubResource( 101 ), Vector2( 3, 0 ), SubResource( 102 ), Vector2( 5, 0 ), SubResource( 103 ) ]
-3/autotile/priority_map = [ Vector3( 1, 0, 2 ) ]
+3/autotile/priority_map = [  ]
 3/autotile/z_index_map = [  ]
 3/occluder_offset = Vector2( 0, 0 )
 3/navigation_offset = Vector2( 0, 0 )

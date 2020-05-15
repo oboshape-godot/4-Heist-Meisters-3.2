@@ -15,7 +15,7 @@ func _ready():
 	possible_destinations = _destinations.get_children()
 	make_path()
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	navigate()
 
 
@@ -29,7 +29,7 @@ func navigate():
 func move():
 	look_at(path[0])
 	motion = (path[0] - position).normalized() * MAX_SPEED * walk_speed
-	move_and_slide(motion)
+	var _slideVel = move_and_slide(motion)
 
 func update_path():
 	if path.size() == 1:
