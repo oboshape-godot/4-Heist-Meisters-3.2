@@ -1,11 +1,12 @@
 extends PlayerDetection
 
 onready var _navigation = get_tree().get_root().find_node("Navigation2D",true,false)
-onready var _destinations = get_node("../../Navigation2D/Destinations")
+onready var _destinations = get_tree().get_root().find_node("Destinations", true, false)
 
 var motion = Vector2()
 var possible_destinations = []
 var path : PoolVector2Array = []
+var _startDelayDone = false
 
 export var destination_threshold = 5
 export var walk_speed = .5
@@ -13,10 +14,12 @@ export var walk_speed = .5
 func _ready():
 	randomize()
 	possible_destinations = _destinations.get_children()
-	make_path()
+	print (possible_destinations.size())
+	$Timer.start()
+
 
 func _physics_process(_delta):
-	navigate()
+	if _startDelayDone == true: navigate()
 
 
 func navigate():
@@ -41,7 +44,8 @@ func update_path():
 
 func make_path():
 	var new_destination = possible_destinations[randi()%possible_destinations.size()-1]
-	path = _navigation.get_simple_path(position,new_destination.position, true)
+	path = _navigation.get_simple_path(position,new_destination.position, false)
 
 func _on_Timer_timeout():
+	_startDelayDone = true
 	make_path()
