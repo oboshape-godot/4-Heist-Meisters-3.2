@@ -34,3 +34,7 @@ func update_motion(_delta):
 			motion = lerp(motion, Vector2.ZERO, 0.1)
 	
 	motion = motion.clamped(MAX_SPEED)
+
+func _input(_event):
+	if Input.is_action_just_pressed("toggle_vision_mode"):
+		get_tree().call_group("Interface", "cycle_vision_mode")

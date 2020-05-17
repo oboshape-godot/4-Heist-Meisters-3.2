@@ -726,8 +726,9 @@ position = Vector2( 1327.24, 485.471 )
 [node name="Camera2D" parent="Player" index="4"]
 zoom = Vector2( 1, 1 )
 
-[node name="CanvasModulate" parent="." index="2"]
-visible = true
+[node name="VisionMode" parent="." index="2"]
+visible = false
+color = Color( 0.0980392, 0.0941176, 0.0941176, 1 )
 
 [node name="SecurityCamera" parent="Cameras" index="0" instance=ExtResource( 2 )]
 position = Vector2( 489.852, 890.218 )
