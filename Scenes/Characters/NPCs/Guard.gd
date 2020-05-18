@@ -14,7 +14,6 @@ export var walk_speed = .5
 func _ready():
 	randomize()
 	possible_destinations = _destinations.get_children()
-	print (possible_destinations.size())
 	$Timer.start()
 
 
@@ -43,8 +42,9 @@ func update_path():
 
 
 func make_path():
+	randomize()
 	var new_destination = possible_destinations[randi()%possible_destinations.size()-1]
-	path = _navigation.get_simple_path(position,new_destination.position, false)
+	path = _navigation.get_simple_path(position,new_destination.global_position, false)
 
 func _on_Timer_timeout():
 	_startDelayDone = true

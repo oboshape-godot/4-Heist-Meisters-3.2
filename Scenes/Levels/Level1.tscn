@@ -1,10 +1,11 @@
-[gd_scene load_steps=104 format=2]
+[gd_scene load_steps=105 format=2]
 
 [ext_resource path="res://Scenes/Levels/TemplateLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/NPCs/SecurityCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Scenes/Characters/NPCs/Guard.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Imported Assets/GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=4]
 [ext_resource path="res://Scripts/FurnitureUpdatTilemapNav.gd" type="Script" id=5]
+[ext_resource path="res://Scenes/Doors/Door.tscn" type="PackedScene" id=6]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -685,46 +686,43 @@ tile_data = PoolIntArray( -327674, -1073741822, 0, -131060, -1073741822, 0, -131
 [node name="Destinations" type="Node" parent="Navigation2D" index="3"]
 
 [node name="Destination" type="Position2D" parent="Navigation2D/Destinations" index="0"]
-position = Vector2( 128.498, 376.038 )
+position = Vector2( 434.027, 1046.56 )
 
-[node name="Destination2" type="Position2D" parent="Navigation2D/Destinations" index="1"]
-position = Vector2( 919.001, 325.688 )
+[node name="Destination6" type="Position2D" parent="Navigation2D/Destinations" index="1"]
+position = Vector2( 897.446, 1122.43 )
 
-[node name="Destination3" type="Position2D" parent="Navigation2D/Destinations" index="2"]
-position = Vector2( 125.981, 824.158 )
+[node name="Destination7" type="Position2D" parent="Navigation2D/Destinations" index="2"]
+position = Vector2( 1391.62, 1114.23 )
 
-[node name="Destination4" type="Position2D" parent="Navigation2D/Destinations" index="3"]
-position = Vector2( 431.03, 1048.7 )
+[node name="Destination10" type="Position2D" parent="Navigation2D/Destinations" index="3"]
+position = Vector2( 817.475, 734.88 )
 
-[node name="Destination5" type="Position2D" parent="Navigation2D/Destinations" index="4"]
-position = Vector2( 893.957, 1119 )
+[node name="Destination13" type="Position2D" parent="Navigation2D/Destinations" index="4"]
+position = Vector2( 128.498, 823.053 )
 
-[node name="Destination8" type="Position2D" parent="Navigation2D/Destinations" index="5"]
-position = Vector2( 1183.54, 43.7135 )
+[node name="Destination18" type="Position2D" parent="Navigation2D/Destinations" index="5"]
+position = Vector2( 1330.11, 486.766 )
 
-[node name="Destination9" type="Position2D" parent="Navigation2D/Destinations" index="6"]
-position = Vector2( 456.338, -357.261 )
+[node name="Destination19" type="Position2D" parent="Navigation2D/Destinations" index="6"]
+position = Vector2( 920.002, 322.724 )
 
-[node name="Destination11" type="Position2D" parent="Navigation2D/Destinations" index="7"]
-position = Vector2( 1631.98, -358.43 )
+[node name="Destination20" type="Position2D" parent="Navigation2D/Destinations" index="7"]
+position = Vector2( 1615.44, 223.376 )
 
-[node name="Destination12" type="Position2D" parent="Navigation2D/Destinations" index="8"]
-position = Vector2( 1614.54, 227.44 )
+[node name="Destination21" type="Position2D" parent="Navigation2D/Destinations" index="8"]
+position = Vector2( 1186.88, 42.2119 )
 
-[node name="Destination14" type="Position2D" parent="Navigation2D/Destinations" index="9"]
-position = Vector2( 1384.92, 1116.35 )
+[node name="Destination22" type="Position2D" parent="Navigation2D/Destinations" index="9"]
+position = Vector2( 1122.11, -342.713 )
 
-[node name="Destination15" type="Position2D" parent="Navigation2D/Destinations" index="10"]
-position = Vector2( 815.333, 734.217 )
+[node name="Destination23" type="Position2D" parent="Navigation2D/Destinations" index="10"]
+position = Vector2( 459.592, -355.667 )
 
-[node name="Destination16" type="Position2D" parent="Navigation2D/Destinations" index="11"]
-position = Vector2( 1118.15, -340.076 )
-
-[node name="Destination17" type="Position2D" parent="Navigation2D/Destinations" index="12"]
-position = Vector2( 1327.24, 485.471 )
+[node name="Destination24" type="Position2D" parent="Navigation2D/Destinations" index="11"]
+position = Vector2( 1636.57, -357.518 )
 
 [node name="Camera2D" parent="Player" index="4"]
-zoom = Vector2( 1, 1 )
+zoom = Vector2( 2, 2 )
 
 [node name="VisionMode" parent="." index="2"]
 visible = false
@@ -765,3 +763,17 @@ position = Vector2( 443.383, 79.2804 )
 
 [node name="Guard3" parent="Guards" index="2" instance=ExtResource( 3 )]
 position = Vector2( 1154.69, 101.765 )
+
+[node name="Door" parent="Doors" index="0" instance=ExtResource( 6 )]
+position = Vector2( 356.247, 159.599 )
+rotation = -1.57079
+
+[node name="Door2" parent="Doors" index="1" instance=ExtResource( 6 )]
+position = Vector2( 1246.18, 479.482 )
+rotation = -1.57079
+
+[node name="Door3" parent="Doors" index="2" instance=ExtResource( 6 )]
+position = Vector2( 1056.63, -29.9112 )
+
+[node name="Door4" parent="Doors" index="3" instance=ExtResource( 6 )]
+position = Vector2( 672.806, -32.4959 )
