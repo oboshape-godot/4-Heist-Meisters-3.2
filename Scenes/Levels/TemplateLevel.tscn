@@ -231,13 +231,14 @@ polygons = [ PoolIntArray( 0, 1, 2, 3, 4, 5, 6, 7, 8 ) ]
 [node name="Tilemap" type="TileMap" parent="Navigation2D"]
 tile_set = ExtResource( 1 )
 collision_layer = 2
-collision_mask = 6
+collision_mask = 5
 format = 1
 tile_data = PoolIntArray( 0, 1, 0, 1, 1, 2, 2, 1, 2, 3, 1, 2, 4, 1, 2, 5, 1, 1, 65536, 1, 65538, 65537, 2, 2, 65538, 2, 2, 65539, 2, 2, 65540, 2, 2, 65541, 1, 65538, 131072, 1, 65538, 131073, 2, 2, 131074, 2, 2, 131075, 2, 2, 131076, 2, 2, 131077, 1, 65538, 196608, 1, 65538, 196609, 2, 2, 196610, 2, 2, 196611, 2, 2, 196612, 2, 2, 196613, 1, 65538, 262144, 1, 65536, 262145, 1, 2, 262146, 1, 2, 262147, 1, 2, 262148, 1, 2, 262149, 1, 65537 )
 
 [node name="Furniture" type="TileMap" parent="Navigation2D"]
 tile_set = SubResource( 15 )
 collision_layer = 8
+collision_mask = 5
 format = 1
 
 [node name="NavMap" type="TileMap" parent="Navigation2D"]
@@ -246,6 +247,7 @@ format = 1
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
 position = Vector2( 189.4, 156.482 )
+collision_layer = 1
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -259,3 +261,5 @@ smoothing_enabled = true
 [node name="Guards" type="Node" parent="."]
 
 [node name="Doors" type="Node" parent="."]
+
+[node name="LockedDoors" type="Node" parent="."]

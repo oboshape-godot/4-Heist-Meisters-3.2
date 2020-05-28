@@ -9,8 +9,9 @@ onready var varaudioNV_ON = load ("res://Imported Assets/SFX/nightvision.wav")
 
 
 func _ready():
-	visible = true
-	color = DARK
+	pass
+	#visible = true
+	#color = DARK
 
 
 func cycle_vision_mode():
