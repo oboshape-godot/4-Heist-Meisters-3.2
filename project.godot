@@ -30,6 +30,10 @@ config/name="Heist Mesiters"
 run/main_scene="res://Scenes/Levels/Level1.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+CombinationGenerator="*res://Scenes/Doors/CombinationGenerator.gd"
+
 [input]
 
 ui_left={

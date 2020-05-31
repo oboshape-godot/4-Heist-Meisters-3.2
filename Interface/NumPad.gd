@@ -1,6 +1,6 @@
 extends Popup
 
-var combination = [1,3,2,4]
+var combination = []
 var guess = []
 
 onready var press_SFX = load("res://Imported Assets/SFX/twoTone1.ogg")
@@ -16,7 +16,8 @@ onready var redLightImage = load("res://Imported Assets/GFX/Interface/PNG/dotRed
 signal combination_correct
 
 func _ready():
-	connect("about_to_show",self, "reset_lock")
+	if connect("about_to_show",self, "reset_lock") != OK:
+		print("Error connecting numpad signal")
 	connect_buttons()
 	reset_lock()	
 
