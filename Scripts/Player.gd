@@ -32,7 +32,7 @@ func update_motion(_delta):
 	else:
 		if motion != Vector2.ZERO:
 			#although not the perfect use of lerp its a slowdown
-			motion = lerp(motion, Vector2.ZERO, 0.1)
+			motion = lerp(motion, Vector2.ZERO, 0.6)
 
 	motion = motion.clamped(MAX_SPEED)
 

@@ -1,7 +1,7 @@
 extends "res://Scenes/Doors/Door.gd"
 
 func _ready():
-	generate_combination()
+	$Label.rect_rotation = -global_rotation_degrees
 
 
 func _on_Door_input_event(_viewport, _event, _shape_idx):
@@ -20,8 +20,7 @@ func _on_NumPad_combination_correct():
 	open()
 
 
-func generate_combination():
-	var _length = 4
-	var _combination = CombinationGenerator.generate_combination(_length)
-	$CanvasLayer/NumPad.combination = _combination
-	print(_combination)
+func _on_Computer_combination(_numbers, lock_group) -> void:
+	$Label.text = lock_group
+	$CanvasLayer/NumPad.combination = _numbers
+	print (_numbers)

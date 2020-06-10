@@ -93,6 +93,7 @@ toggle_vision_mode={
 2d_physics/layer_2="Tilemap"
 2d_physics/layer_3="NPC"
 2d_physics/layer_4="Furnature"
+2d_physics/layer_5="Computers"
 
 [rendering]
 
