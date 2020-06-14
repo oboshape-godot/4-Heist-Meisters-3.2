@@ -1,9 +1,10 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=23 format=2]
 
 [ext_resource path="res://Tiles/Tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://Scenes/Characters/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Imported Assets/GFX/Tilesheet/tilesheet_complete.png" type="Texture" id=3]
 [ext_resource path="res://Interface/VisionMode.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Interface/GUI.tscn" type="PackedScene" id=5]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 8, 8, 16, 8, 24, 16, 40, 16, 48, 8, 56, 8, 56, 40, 40, 56, 24, 56, 8, 40 )
@@ -265,3 +266,5 @@ smoothing_enabled = true
 [node name="LockedDoors" type="Node" parent="."]
 
 [node name="Computers" type="Node" parent="."]
+
+[node name="GUI" parent="." instance=ExtResource( 5 )]
