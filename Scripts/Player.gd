@@ -3,6 +3,10 @@ extends TemplateCharacter
 
 var motion = Vector2() # motion velocity of player
 var moveInputDir = Vector2() # used to record direction inputs
+var velocity_multiplier = 1
+export var disguise_slowdown = 0.25
+
+var disguise_label_position_offset : Vector2
 
 const PLAYER_SPRITE = preload("res://Imported Assets/GFX/PNG/Hitman 1/hitman1_stand.png")
 const BOX_SPRITE = preload("res://Imported Assets/GFX/PNG/Tiles/tile_129.png")
@@ -13,13 +17,25 @@ const CRATE_LIGHT_OCCLUDER = preload("res://Scenes/Characters/player_box_shape_o
 enum COLLISION_LAYER { player = 1, disguised = 512 }
 
 var is_disguised : bool = false
+export var disguise_duration : float = 5.0
+export var number_of_disguises = 3
+
+
+func _ready():
+	$Timer.wait_time = disguise_duration
+	disguise_label_position_offset = $disguise_time.rect_position
+	reveal()
+
 
 func _process(_delta):
 	update_motion(_delta)
+	if is_disguised:
+		$disguise_time.text = str($Timer.time_left).pad_decimals(2)
+		set_disguise_Label_transform()
 
 
 func _physics_process(_delta):
-	var _remainder = move_and_slide(motion)
+	var _remainder = move_and_slide(motion * velocity_multiplier)
 
 func update_motion(_delta):
 	# point towards the mouse cursor
@@ -56,11 +72,11 @@ func _input(_event):
 
 func toggle_disguise() -> void :
 	if is_disguised:
-		reveal()
 		is_disguised = false
-	else:
-		disguise()
+		reveal()
+	elif number_of_disguises > 0:
 		is_disguised = true
+		disguise()
 
 func reveal() -> void:
 	$Sprite.texture = PLAYER_SPRITE
@@ -68,9 +84,25 @@ func reveal() -> void:
 	$LightOccluder2D.occluder = HUMAN_LIGHT_OCCLUDER
 	collision_layer = COLLISION_LAYER.player
 	
+	velocity_multiplier = 1
+	
+	$disguise_time.hide()
+	is_disguised = false
+
 
 func disguise() -> void:
 	$Sprite.texture = BOX_SPRITE
 	$Light2D.texture = BOX_SPRITE
 	$LightOccluder2D.occluder = CRATE_LIGHT_OCCLUDER
 	collision_layer = COLLISION_LAYER.disguised
+	
+	velocity_multiplier = disguise_slowdown
+	
+	$Timer.start()
+	$disguise_time.show()
+	is_disguised = true
+	number_of_disguises -= 1
+
+func set_disguise_Label_transform():
+	$disguise_time.rect_global_position = position + disguise_label_position_offset
+	$disguise_time.set_rotation(-global_rotation)

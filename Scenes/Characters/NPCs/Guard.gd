@@ -46,6 +46,7 @@ func make_path():
 	var new_destination = possible_destinations[randi()%possible_destinations.size()-1]
 	path = _navigation.get_simple_path(position,new_destination.global_position, false)
 
+
 func _on_Timer_timeout():
 	_startDelayDone = true
 	make_path()
