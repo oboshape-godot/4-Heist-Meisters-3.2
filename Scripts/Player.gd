@@ -25,6 +25,7 @@ func _ready():
 	$Timer.wait_time = disguise_duration
 	disguise_label_position_offset = $disguise_time.rect_position
 	reveal()
+	get_tree().call_group("disguise_display", "update_disguises", number_of_disguises)
 
 
 func _process(_delta):
@@ -102,7 +103,13 @@ func disguise() -> void:
 	$disguise_time.show()
 	is_disguised = true
 	number_of_disguises -= 1
+	get_tree().call_group("disguise_display", "update_disguises", number_of_disguises)
 
 func set_disguise_Label_transform():
 	$disguise_time.rect_global_position = position + disguise_label_position_offset
 	$disguise_time.set_rotation(-global_rotation)
+	
+func collect_briefcase():
+	var loot : Node = Node.new()
+	loot.set_name("Briefcase")
+	add_child(loot)

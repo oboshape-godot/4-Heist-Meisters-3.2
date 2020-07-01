@@ -1,4 +1,4 @@
-[gd_scene load_steps=107 format=2]
+[gd_scene load_steps=108 format=2]
 
 [ext_resource path="res://Scenes/Levels/TemplateLevel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scenes/Characters/NPCs/SecurityCamera.tscn" type="PackedScene" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://Scenes/Doors/Door.tscn" type="PackedScene" id=6]
 [ext_resource path="res://Scenes/Doors/LockedDoor.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Computer/Computer.tscn" type="PackedScene" id=8]
+[ext_resource path="res://Loot/Briefcase.tscn" type="PackedScene" id=9]
 
 [sub_resource type="OccluderPolygon2D" id=1]
 polygon = PoolVector2Array( 0, 0, 64, 0, 64, 64, 0, 64 )
@@ -794,4 +795,7 @@ collision_mask = 5
 position = Vector2( 136.685, 222.83 )
 rotation = -1.5708
 lock_group = "1"
+
+[node name="Briefcase" parent="." index="9" instance=ExtResource( 9 )]
+position = Vector2( 1412.03, -338.148 )
 [connection signal="combination" from="Computers/Computer" to="LockedDoors/LockedDoor" method="_on_Computer_combination"]
