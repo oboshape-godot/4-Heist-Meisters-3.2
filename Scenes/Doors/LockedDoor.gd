@@ -23,4 +23,3 @@ func _on_NumPad_combination_correct():
 func _on_Computer_combination(_numbers, lock_group) -> void:
 	$Label.text = lock_group
 	$CanvasLayer/NumPad.combination = _numbers
-	print (_numbers)

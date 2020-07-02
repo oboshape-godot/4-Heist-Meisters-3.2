@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Imported Assets/GFX/Interface/PNG/glassPanel_cornerTL.png" type="Texture" id=1]
 [ext_resource path="res://Interface/White_Label_text_style.tres" type="Theme" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://Imported Assets/GFX/Interface/PNG/glassPanel_cornerBR.png" type="Texture" id=6]
 [ext_resource path="res://Imported Assets/GFX/PNG/Tiles/tile_129.png" type="Texture" id=7]
 [ext_resource path="res://Interface/DisguiseCounter.gd" type="Script" id=8]
+[ext_resource path="res://Imported Assets/GFX/Interface/PNG/glassPanel_cornerTR.png" type="Texture" id=10]
+[ext_resource path="res://Interface/Loot_UI.gd" type="Script" id=11]
 
 [node name="GUI" type="CanvasLayer"]
 
@@ -24,7 +26,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Control"]
+[node name="Suspicion_UI" type="NinePatchRect" parent="Control"]
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -44,7 +46,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CenterContainer" type="CenterContainer" parent="Control/NinePatchRect"]
+[node name="CenterContainer" type="CenterContainer" parent="Control/Suspicion_UI"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 10.0
@@ -55,18 +57,18 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="HBoxContainer" parent="Control/NinePatchRect/CenterContainer"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Control/Suspicion_UI/CenterContainer"]
 margin_left = 49.0
 margin_top = 18.0
 margin_right = 210.0
 margin_bottom = 42.0
 
-[node name="Label" type="Label" parent="Control/NinePatchRect/CenterContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="Control/Suspicion_UI/CenterContainer/VBoxContainer"]
 margin_right = 133.0
 margin_bottom = 23.0
 text = "suspicion"
 
-[node name="SuspicionMeter" type="TextureProgress" parent="Control/NinePatchRect/CenterContainer/VBoxContainer" groups=[
+[node name="SuspicionMeter" type="TextureProgress" parent="Control/Suspicion_UI/CenterContainer/VBoxContainer" groups=[
 "suspicionmeter",
 ]]
 margin_left = 137.0
@@ -97,7 +99,7 @@ anchor_bottom = 1.0
 margin_left = 12.0
 margin_top = 12.0
 margin_right = -12.0
-margin_bottom = -12.0
+margin_bottom = -10.0
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -118,3 +120,48 @@ auto_height = true
 max_columns = 7
 icon_scale = 0.619
 script = ExtResource( 8 )
+
+[node name="Loot_UI" type="NinePatchRect" parent="Control" groups=[
+"Loot",
+]]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -80.0
+margin_right = 280.0
+rect_min_size = Vector2( 280, 80 )
+texture = ExtResource( 10 )
+patch_margin_left = 12
+patch_margin_top = 12
+patch_margin_right = 12
+patch_margin_bottom = 12
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Loot_UI"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 12.0
+margin_top = 12.0
+margin_right = -12.0
+margin_bottom = -12.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Control/Loot_UI/VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 23.0
+text = "Loot:"
+
+[node name="ItemList" type="ItemList" parent="Control/Loot_UI/VBoxContainer"]
+margin_top = 27.0
+margin_right = 256.0
+margin_bottom = 27.0
+auto_height = true
+max_columns = 7
+icon_scale = 0.25
+__meta__ = {
+"_edit_use_anchors_": false
+}
