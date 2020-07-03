@@ -20,7 +20,7 @@ font_data = ExtResource( 1 )
 
 [resource]
 default_font = SubResource( 7 )
-ItemList/colors/font_color = Color( 0.63, 0.63, 0.63, 1 )
+ItemList/colors/font_color = Color( 0, 0, 0, 1 )
 ItemList/colors/font_color_selected = Color( 1, 1, 1, 1 )
 ItemList/colors/guide_color = Color( 0, 0, 0, 0.1 )
 ItemList/constants/hseparation = 4

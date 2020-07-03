@@ -13,7 +13,8 @@ func _process(_delta: float) -> void:
 func player_seen() -> void:
 	value += step * suspicion_multiplier
 	if value >= max_value:
-		end_game()
+		if get_tree().change_scene("res://Scenes/Levels/LoseScreen.tscn") !=OK :
+			print("error changing scene in suspicion script")
 
 
 func end_game() -> void:

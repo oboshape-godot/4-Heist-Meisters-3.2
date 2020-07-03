@@ -27,12 +27,13 @@ _global_script_class_icons={
 [application]
 
 config/name="Heist Mesiters GD"
-run/main_scene="res://Scenes/Levels/Level1.tscn"
+run/main_scene="res://Scenes/Levels/Lobby.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
 CombinationGenerator="*res://Scenes/Doors/CombinationGenerator.gd"
+BackgroundMusic="*res://Scenes/BackgroundMusic.tscn"
 
 [input]
 
@@ -103,5 +104,6 @@ toggle_disguise={
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"

@@ -771,7 +771,7 @@ position = Vector2( 443.383, 79.2804 )
 position = Vector2( 1154.69, 101.765 )
 
 [node name="Door" parent="Doors" index="0" instance=ExtResource( 6 )]
-position = Vector2( 104.954, 356.347 )
+position = Vector2( 735.244, 864.437 )
 rotation = -1.57079
 
 [node name="Door2" parent="Doors" index="1" instance=ExtResource( 6 )]
